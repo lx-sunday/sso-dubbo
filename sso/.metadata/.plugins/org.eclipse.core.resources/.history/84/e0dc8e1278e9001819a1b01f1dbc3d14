@@ -1,0 +1,37 @@
+package com.sso.client.authc;
+
+public class AuthenticationConfig {
+
+	private String loginUrl;
+	
+	private String excludeUrls;
+	
+	private String cookieName;
+	
+	private String cookieDomain;
+
+	public String getLoginUrl() {
+		return loginUrl;
+	}
+
+	public void setLoginUrl(String loginUrl) {
+		this.loginUrl = loginUrl;
+	}
+
+	public String getExcludeUrls() {
+		return excludeUrls;
+	}
+
+	public void setExcludeUrls(String excludeUrls) {
+		this.excludeUrls = excludeUrls;
+	}
+
+	public String getCookieName() {
+		return cookieName;
+	}
+
+	public void setCookieName(String cookieName) {
+		this.cookieName = cookieName;
+	}
+	
+}

@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\Users\founder\Desktop\sso\SSO3\sso\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2238324104.index
+\oa-client\src\main\java
+C:\Users\founder\Desktop\sso\SSO3 - springboot+dubbo+redis\sso\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2238324104.index
+\oa-client\src\main\java
+C:\Users\founder\Desktop\sso\SSO3 - springboot+dubbo+redis\sso\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4101238035.index
+\pro-client\src\main\java
+C:\Users\founder\Desktop\sso\SSO3\sso\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4101238035.index
+\pro-client\src\main\java

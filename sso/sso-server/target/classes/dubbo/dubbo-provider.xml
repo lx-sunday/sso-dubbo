@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+   
+    <!-- provider's application name, used for tracing dependency relationship -->
+    <dubbo:application name="sso-dubbo-provider"/>
+
+    <!-- use multicast registry center to export service -->
+    <!-- 采用本地的zookeeper注册中心注册服务 ，需要先开启zookeeper-->
+    <dubbo:registry protocol="zookeeper" address="zookeeper://localhost:2181"/>
+
+    <!-- use dubbo protocol to export service on port 20880 -->
+    <!-- 用dubbo协议在20884端口暴露服务-->
+    <dubbo:protocol name="dubbo" port="20884"/>
+
+    <!-- 用dubbo协议实现定义好的接口-->
+    <dubbo:service interface="com.sso.interfaces.service.SsoUserService" 
+            ref="ssoUserService" retries="0" timeout="6000"  />
+
+    <bean id="ssoUserService" class="com.sso.server.serviceImp.SsoUserServiceImp"></bean>
+</beans>

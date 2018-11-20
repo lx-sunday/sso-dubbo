@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sso.server</groupId>
+    <artifactId>sso-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+  
+  <parent>
+     <groupId>com.sso.parent</groupId>
+	 <artifactId>sso-parent</artifactId>
+	 <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <properties>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		 <dubbo.starter.version>0.1.0</dubbo.starter.version>
+		 <mysql.connector.version>5.1.16</mysql.connector.version>
+		 <druid.version>1.0.13</druid.version>
+  </properties>
+  
+  <dependencies>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+       </dependency>
+       <!-- spring-boot-starter-data-jpa -->
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-data-jpa</artifactId>
+       </dependency>
+       <!-- mysql-connector-java -->
+       <dependency>
+           <groupId>mysql</groupId>
+           <artifactId>mysql-connector-java</artifactId>
+       </dependency>
+       <!-- 单元测试依赖 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+	</dependency>
+	<!-- 权限相关 -->
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-all</artifactId>
+		<version>1.2.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-spring</artifactId>
+		<version>1.2.0</version>
+	</dependency>
+      <!-- 引入dubbo -->
+      <dependency>
+  		<groupId>com.alibaba</groupId>
+  		<artifactId>dubbo</artifactId>
+  		<version>2.5.3</version>
+  		<exclusions>
+  			<exclusion>
+  				<groupId>org.springframework</groupId>
+  				<artifactId>spring</artifactId>
+  			</exclusion>
+  		</exclusions>
+	  	</dependency>
+	    <!--引入zookeeper-->
+	    <dependency>
+		  <groupId>org.apache.zookeeper</groupId>
+		  <artifactId>zookeeper</artifactId>
+		  <version>3.4.7</version>
+	    </dependency>
+	  <!--引入zkclient-->
+	    <dependency>
+	  		<groupId>com.github.sgroschupf</groupId>
+	  		<artifactId>zkclient</artifactId>
+	  		<version>0.1</version>
+	  		<exclusions>
+	  			<exclusion>
+	  				<groupId>org.apache.zookeeper</groupId>
+	  				<artifactId>zookeeper</artifactId>
+	  			</exclusion>
+	  		</exclusions>
+	  	</dependency>
+	     <!--引入接口-->
+	     <dependency>
+		      <groupId>com.sso.interfaces</groupId>
+			  <artifactId>sso-interface</artifactId>
+			  <version>0.0.1-SNAPSHOT</version>
+	     </dependency>
+  </dependencies>
+  
+  <build>
+     <finalName>sso-server</finalName>
+
+     <plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+		</plugins>
+  </build>
+</project>

@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sso.client</groupId>
+  <artifactId>sso-client</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+   <parent>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>1.5.6.RELEASE</version>
+   </parent>
+  
+  <properties>
+     <!-- 外包服务版本 -->
+		<sso-interface.version>0.0.1-SNAPSHOT</sso-interface.version>
+  </properties>
+  
+  <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+      <!-- 调用用户权限服务 -->
+	    <dependency>
+		      <groupId>com.sso.interfaces</groupId>
+			  <artifactId>sso-interface</artifactId>
+			  <version>${sso-interface.version}</version>
+	    </dependency>
+	    <!-- servlet依赖 -->
+	     <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+          <!--springboot redis -->
+	     <dependency>  
+		    <groupId>org.springframework.boot</groupId>  
+		    <artifactId>spring-boot-starter-data-redis</artifactId>  
+		</dependency>
+  </dependencies>
+  <build>
+    <finalName>oa-client</finalName>
+     <plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+</project>
